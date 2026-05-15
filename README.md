@@ -22,13 +22,13 @@ exhaustiva antes de cualquier cálculo:
 | Archivo | Descripción | Registros |
 |---|---|---|
 | ventas_cuentas_cobrar.csv | Facturas emitidas a clientes | 150 |
-| inventario.csv | Movimientos mensuales de stock | 130 |
+| inventario.csv | Movimientos mensuales de stock por producto | 130 |
 | cuentas_pagar.csv | Órdenes de compra a proveedores | 128 |
 
 ---
 
 ## Proceso de limpieza
-Cada dataset contenía errores intencionales que fueron identificados y resueltos:
+Cada dataset contenía errores que fueron identificados y resueltos:
 
 **ventas_cuentas_cobrar.csv**
 - Facturas sin ID y con ID duplicado (F-0149 con dos clientes distintos)
