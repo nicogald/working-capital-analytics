@@ -22,7 +22,7 @@ exhaustiva antes de cualquier cálculo:
 | Archivo | Descripción | Registros |
 |---|---|---|
 | ventas_cuentas_cobrar.csv | Facturas emitidas a clientes | 150 |
-| inventario.csv | Movimientos mensuales de stock por producto | 130 |
+| inventario.csv | Movimientos mensuales de stock por producto | 126 |
 | cuentas_pagar.csv | Órdenes de compra a proveedores | 128 |
 
 ---
