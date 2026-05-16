@@ -1,0 +1,151 @@
+factura_id,cliente_id,cliente_nombre,region,categoria_producto,fecha_venta,fecha_pago,monto_venta,monto_cobrado,moneda,estado
+F-0001,C001,Distribuidora Norte S.A.,Norte,Electronica,2023-01-05,2023-02-10,150000,150000,CLP,Pagado
+F-0002,C002,Comercial Sur Ltda.,Sur,Alimentos,2023-01-08,2023-02-25,85000,85000,CLP,Pagado
+F-0003,C003,Importadora Central,Centro,Electronica,2023-01-10,,200000,,CLP,Pendiente
+F-0004,C001,Distribuidora Norte S.A.,Norte,Textil,2023-01-15,2023-03-01,320000,320000,CLP,Pagado
+F-0005,C004,Retail Express S.A.,Centro,Alimentos,2023-01-18,2023-02-20,95000,95000,CLP,Pagado
+F-0006,C005,MegaStore Chile,Sur,Electronica,2023-01-20,2023-04-05,410000,410000,CLP,Pagado
+F-0007,C002,Comercial Sur Ltda.,Sur,Alimentos,2023-01-22,,130000,,CLP,Pendiente
+F-0008,C006,Proveedores del Valle,Norte,Textil,2023-01-25,2023-02-28,75000,75000,CLP,Pagado
+F-0009,C003,Importadora Central,Centro,Electronica,2023-01-28,2023-03-15,280000,280000,CLP,Pagado
+F-0010,C007,Distribuidora Pacífico,Sur,Alimentos,2023-02-01,2023-03-10,110000,110000,CLP,Pagado
+F-0011,C008,Comercializadora Andes,Norte,Electronica,2023-02-03,2023-04-20,500000,500000,CLP,Pagado
+F-0012,C004,Retail Express S.A.,Centro,Textil,2023-02-05,2023-03-05,88000,88000,CLP,Pagado
+F-0013,C009,Grupo Empresarial Sur,Sur,Electronica,2023-02-08,,350000,,CLP,Pendiente
+F-0014,C001,Distribuidora Norte S.A.,Norte,Alimentos,2023-02-10,2023-03-20,62000,62000,CLP,Pagado
+F-0015,C010,FastFood Supply Co.,Centro,Alimentos,2023-02-12,2023-02-28,45000,45000,CLP,Pagado
+F-0016,C005,MegaStore Chile,Sur,Electronica,2023-02-15,2023-05-01,620000,620000,CLP,Pagado
+F-0017,C006,Proveedores del Valle,Norte,Textil,2023-02-18,2023-03-25,93000,93000,CLP,Pagado
+F-0018,C002,Comercial Sur Ltda,,Alimentos,2023-02-20,2023-03-30,71000,71000,CLP,Pagado
+F-0019,C011,Inversiones Maipo,Centro,Electronica,2023-02-22,2023-04-10,415000,415000,CLP,Pagado
+F-0020,C007,Distribuidora Pacífico,Sur,Alimentos,2023-02-25,2023-03-28,98000,98000,CLP,Pagado
+F-0021,C012,Norte Distribuciones,Norte,Textil,2023-03-01,2023-04-05,155000,155000,CLP,Pagado
+F-0022,C008,Comercializadora Andes,Norte,Electronica,2023-03-05,2023-05-10,480000,480000,CLP,Pagado
+F-0023,C003,Importadora Central,Centro,Alimentos,2023-03-08,2023-04-15,67000,67000,CLP,Pagado
+F-0024,C013,Supermercados Union,Sur,Alimentos,2023-03-10,,210000,,CLP,Pendiente
+F-0025,C009,Grupo Empresarial Sur,Sur,Electronica,2023-03-12,2023-04-25,390000,390000,CLP,Pagado
+F-0026,C004,Retail Express S.A.,Centro,Textil,2023-03-15,2023-04-20,112000,112000,CLP,Pagado
+F-0027,C010,FastFood Supply Co.,Centro,Alimentos,2023-03-18,2023-04-05,55000,55000,CLP,Pagado
+F-0028,C014,Distribuidora Bío-Bío,Sur,Electronica,2023-03-20,2023-06-01,700000,700000,CLP,Pagado
+F-0029,C001,Distribuidora Norte S.A.,Norte,Alimentos,2023-03-22,2023-04-28,80000,80000,CLP,Pagado
+F-0030,C015,TechSupply S.A.,Centro,Electronica,2023-03-25,2023-05-15,550000,550000,CLP,Pagado
+F-0031,C011,Inversiones Maipo,Centro,Textil,2023-03-28,2023-05-02,175000,175000,CLP,Pagado
+F-0032,C006,Proveedores del Valle,Norte,Alimentos,2023-04-01,2023-05-10,48000,48000,CLP,Pagado
+F-0033,C016,Comercial Atacama,Norte,Electronica,2023-04-03,,440000,,CLP,Pendiente
+F-0034,C012,Norte Distribuciones,Norte,Textil,2023-04-05,2023-05-15,168000,168000,CLP,Pagado
+F-0035,C013,Supermercados Union,Sur,Alimentos,2023-04-08,2023-05-20,195000,195000,CLP,Pagado
+F-0036,C007,Distribuidora Pacífico,Sur,Electronica,2023-04-10,2023-06-05,380000,380000,CLP,Pagado
+F-0037,C002,Comercial Sur Ltda.,Sur,Textil,2023-04-12,2023-05-25,145000,145000,CLP,Pagado
+F-0038,C017,Importadora Valpo,Centro,Electronica,2023-04-15,2023-07-01,810000,810000,CLP,Pagado
+F-0039,C005,MegaStore Chile,Sur,Alimentos,2023-04-18,2023-05-28,72000,72000,CLP,Pagado
+F-0040,C014,Distribuidora Bío-Bío,Sur,Textil,2023-04-20,2023-05-30,190000,190000,CLP,Pagado
+F-0041,C008,Comercializadora Andes,Norte,Alimentos,2023-04-22,2023-05-28,58000,58000,CLP,Pagado
+F-0042,C018,Grupo Retail Sur,Sur,Electronica,2023-04-25,,520000,,CLP,Pendiente
+F-0043,C015,TechSupply S.A.,Centro,Electronica,2023-04-28,2023-06-15,630000,630000,CLP,Pagado
+F-0044,C009,Grupo Empresarial Sur,Sur,Alimentos,2023-05-01,2023-06-10,88000,88000,CLP,Pagado
+F-0045,C003,Importadora Central,Centro,Textil,2023-05-05,2023-06-20,205000,205000,CLP,Pagado
+F-0046,C019,Comercial Magallanes,Sur,Alimentos,2023-05-08,2023-06-15,62000,62000,CLP,Pagado
+F-0047,C016,Comercial Atacama,Norte,Electronica,2023-05-10,2023-07-05,470000,470000,CLP,Pagado
+F-0048,C020,FastTech Distribuciones,Centro,Electronica,2023-05-12,,390000,,CLP,Pendiente
+F-0049,C001,Distribuidora Norte S.A.,Norte,Textil,2023-05-15,2023-06-25,220000,220000,CLP,Pagado
+F-0050,C010,FastFood Supply Co.,Centro,Alimentos,2023-05-18,2023-06-20,78000,78000,CLP,Pagado
+F-0051,C017,Importadora Valpo,Centro,Electronica,2023-05-20,2023-08-10,750000,750000,CLP,Pagado
+F-0052,C004,Retail Express S.A.,Centro,Alimentos,2023-05-22,2023-06-28,91000,91000,CLP,Pagado
+F-0053,C012,Norte Distribuciones,Norte,Electronica,2023-05-25,2023-07-10,510000,510000,CLP,Pagado
+F-0054,C013,Supermercados Union,Sur,Textil,2023-05-28,2023-07-05,185000,185000,CLP,Pagado
+F-0055,C018,Grupo Retail Sur,Sur,Alimentos,2023-06-01,2023-07-12,105000,105000,CLP,Pagado
+F-0056,C006,Proveedores del Valle,Norte,Electronica,2023-06-03,2023-08-01,460000,460000,CLP,Pagado
+F-0057,C019,Comercial Magallanes,Sur,Textil,2023-06-05,,170000,,CLP,Pendiente
+F-0058,C014,Distribuidora Bío-Bío,Sur,Alimentos,2023-06-08,2023-07-18,95000,95000,CLP,Pagado
+F-0059,C020,FastTech Distribuciones,Centro,Electronica,2023-06-10,2023-08-20,680000,680000,CLP,Pagado
+F-0060,C002,Comercial Sur Ltda.,Sur,Alimentos,2023-06-12,2023-07-22,82000,82000,CLP,Pagado
+F-0061,C011,Inversiones Maipo,Centro,Electronica,2023-06-15,2023-08-05,590000,590000,CLP,Pagado
+F-0062,C007,Distribuidora Pacífico,Sur,Textil,2023-06-18,2023-07-28,162000,162000,CLP,Pagado
+F-0063,C015,TechSupply S.A.,Centro,Alimentos,2023-06-20,2023-07-25,68000,68000,CLP,Pagado
+F-0064,C008,Comercializadora Andes,Norte,Electronica,2023-06-22,,445000,,CLP,Pendiente
+F-0065,C005,MegaStore Chile,Sur,Textil,2023-06-25,2023-08-10,230000,230000,CLP,Pagado
+F-0066,C003,Importadora Central,Centro,Electronica,2023-06-28,2023-09-01,720000,720000,CLP,Pagado
+F-0067,C009,Grupo Empresarial Sur,Sur,Alimentos,2023-07-01,2023-08-10,110000,110000,CLP,Pagado
+F-0068,C016,Comercial Atacama,Norte,Textil,2023-07-03,2023-08-15,198000,198000,CLP,Pagado
+F-0069,C020,FastTech Distribuciones,Centro,Alimentos,2023-07-05,2023-08-12,74000,74000,CLP,Pagado
+F-0070,C001,Distribuidora Norte S.A.,Norte,Electronica,2023-07-08,2023-09-10,640000,640000,CLP,Pagado
+F-0071,C013,Supermercados Union,Sur,Electronica,2023-07-10,,480000,,CLP,Pendiente
+F-0072,C004,Retail Express S.A.,Centro,Textil,2023-07-12,2023-08-20,175000,175000,CLP,Pagado
+F-0073,C019,Comercial Magallanes,Sur,Alimentos,2023-07-15,2023-08-22,88000,88000,CLP,Pagado
+F-0074,C017,Importadora Valpo,Centro,Electronica,2023-07-18,2023-10-05,890000,890000,CLP,Pagado
+F-0075,C010,FastFood Supply Co.,Centro,Alimentos,2023-07-20,2023-08-25,92000,92000,CLP,Pagado
+F-0076,C018,Grupo Retail Sur,Sur,Textil,2023-07-22,2023-08-30,210000,210000,CLP,Pagado
+F-0077,C006,Proveedores del Valle,Norte,Alimentos,2023-07-25,2023-08-28,55000,55000,CLP,Pagado
+F-0078,C012,Norte Distribuciones,Norte,Electronica,2023-07-28,2023-09-15,530000,530000,CLP,Pagado
+F-0079,C014,Distribuidora Bío-Bío,Sur,Textil,2023-08-01,2023-09-10,195000,195000,CLP,Pagado
+F-0080,C002,Comercial Sur Ltda.,Sur,Electronica,2023-08-03,,410000,,CLP,Pendiente
+F-0081,C015,TechSupply S.A.,Centro,Alimentos,2023-08-05,2023-09-12,78000,78000,CLP,Pagado
+F-0082,C011,Inversiones Maipo,Centro,Textil,2023-08-08,2023-09-20,215000,215000,CLP,Pagado
+F-0083,C007,Distribuidora Pacífico,Sur,Alimentos,2023-08-10,2023-09-18,103000,103000,CLP,Pagado
+F-0084,C005,MegaStore Chile,Sur,Electronica,2023-08-12,2023-10-20,760000,760000,CLP,Pagado
+F-0085,C016,Comercial Atacama,Norte,Alimentos,2023-08-15,2023-09-22,68000,68000,CLP,Pagado
+F-0086,C009,Grupo Empresarial Sur,Sur,Textil,2023-08-18,2023-09-28,188000,188000,CLP,Pagado
+F-0087,C020,FastTech Distribuciones,Centro,Electronica,2023-08-20,,550000,,CLP,Pendiente
+F-0088,C003,Importadora Central,Centro,Alimentos,2023-08-22,2023-09-30,85000,85000,CLP,Pagado
+F-0089,C001,Distribuidora Norte S.A.,Norte,Textil,2023-08-25,2023-10-05,240000,240000,CLP,Pagado
+F-0090,C013,Supermercados Union,Sur,Alimentos,2023-08-28,2023-10-01,178000,178000,CLP,Pagado
+F-0091,C004,Retail Express S.A.,Centro,Electronica,2023-09-01,2023-11-05,610000,610000,CLP,Pagado
+F-0092,C008,Comercializadora Andes,Norte,Textil,2023-09-03,2023-10-12,225000,225000,CLP,Pagado
+F-0093,C019,Comercial Magallanes,Sur,Electronica,2023-09-05,,490000,,CLP,Pendiente
+F-0094,C017,Importadora Valpo,Centro,Alimentos,2023-09-08,2023-10-15,95000,95000,CLP,Pagado
+F-0095,C010,FastFood Supply Co.,Centro,Textil,2023-09-10,2023-10-18,142000,142000,CLP,Pagado
+F-0096,C006,Proveedores del Valle,Norte,Electronica,2023-09-12,2023-11-10,580000,580000,CLP,Pagado
+F-0097,C012,Norte Distribuciones,Norte,Alimentos,2023-09-15,2023-10-20,72000,72000,CLP,Pagado
+F-0098,C018,Grupo Retail Sur,Sur,Electronica,2023-09-18,2023-11-25,640000,640000,CLP,Pagado
+F-0099,C014,Distribuidora Bío-Bío,Sur,Alimentos,2023-09-20,2023-10-28,115000,115000,CLP,Pagado
+F-0100,C002,Comercial Sur Ltda.,Sur,Textil,2023-09-22,2023-11-01,198000,198000,CLP,Pagado
+F-0101,C015,TechSupply S.A.,Centro,Electronica,2023-09-25,2023-11-15,670000,670000,CLP,Pagado
+F-0102,C011,Inversiones Maipo,Centro,Alimentos,2023-09-28,2023-10-30,88000,88000,CLP,Pagado
+F-0103,C007,Distribuidora Pacífico,Sur,Textil,2023-10-01,,220000,,CLP,Pendiente
+F-0104,C005,MegaStore Chile,Sur,Alimentos,2023-10-03,2023-11-10,132000,132000,CLP,Pagado
+F-0105,C020,FastTech Distribuciones,Centro,Textil,2023-10-05,2023-11-12,248000,248000,CLP,Pagado
+F-0106,C016,Comercial Atacama,Norte,Electronica,2023-10-08,2023-12-01,720000,720000,CLP,Pagado
+F-0107,C009,Grupo Empresarial Sur,Sur,Alimentos,2023-10-10,2023-11-18,125000,125000,CLP,Pagado
+F-0108,C001,Distribuidora Norte S.A.,Norte,Electronica,2023-10-12,2023-12-10,780000,780000,CLP,Pagado
+F-0109,C003,Importadora Central,Centro,Textil,2023-10-15,2023-11-25,235000,235000,CLP,Pagado
+F-0110,C013,Supermercados Union,Sur,Electronica,2023-10-18,,510000,,CLP,Pendiente
+F-0111,C004,Retail Express S.A.,Centro,Alimentos,2023-10-20,2023-11-28,105000,105000,CLP,Pagado
+F-0112,C008,Comercializadora Andes,Norte,Electronica,2023-10-22,2023-12-20,690000,690000,CLP,Pagado
+F-0113,C017,Importadora Valpo,Centro,Textil,2023-10-25,2023-12-05,268000,268000,CLP,Pagado
+F-0114,C019,Comercial Magallanes,Sur,Alimentos,2023-10-28,2023-12-01,98000,98000,CLP,Pagado
+F-0115,C006,Proveedores del Valle,Norte,Alimentos,2023-11-01,2023-12-08,65000,65000,CLP,Pagado
+F-0116,C018,Grupo Retail Sur,Sur,Textil,2023-11-03,,280000,,CLP,Pendiente
+F-0117,C010,FastFood Supply Co.,Centro,Electronica,2023-11-05,2023-12-15,430000,430000,CLP,Pagado
+F-0118,C012,Norte Distribuciones,Norte,Textil,2023-11-08,2023-12-18,255000,255000,CLP,Pagado
+F-0119,C014,Distribuidora Bío-Bío,Sur,Electronica,2023-11-10,2024-01-15,820000,820000,CLP,Pagado
+F-0120,C002,Comercial Sur Ltda.,Sur,Alimentos,2023-11-12,2023-12-20,115000,115000,CLP,Pagado
+F-0121,C015,TechSupply S.A.,Centro,Textil,2023-11-15,2023-12-22,290000,290000,CLP,Pagado
+F-0122,C011,Inversiones Maipo,Centro,Electronica,2023-11-18,,630000,,CLP,Pendiente
+F-0123,C020,FastTech Distribuciones,Centro,Alimentos,2023-11-20,2023-12-28,108000,108000,CLP,Pagado
+F-0124,C005,MegaStore Chile,Sur,Textil,2023-11-22,2024-01-10,310000,310000,CLP,Pagado
+F-0125,C016,Comercial Atacama,Norte,Alimentos,2023-11-25,2023-12-30,78000,78000,CLP,Pagado
+F-0126,C009,Grupo Empresarial Sur,Sur,Electronica,2023-11-28,2024-01-20,850000,850000,CLP,Pagado
+F-0127,C007,Distribuidora Pacífico,Sur,Alimentos,2023-12-01,2024-01-08,128000,128000,CLP,Pagado
+F-0128,C003,Importadora Central,Centro,Textil,2023-12-03,,305000,,CLP,Pendiente
+F-0129,C001,Distribuidora Norte S.A.,Norte,Alimentos,2023-12-05,2024-01-12,95000,95000,CLP,Pagado
+F-0130,C013,Supermercados Union,Sur,Textil,2023-12-08,2024-01-25,270000,270000,CLP,Pagado
+F-0131,C004,Retail Express S.A.,Centro,Electronica,2023-12-10,2024-02-05,740000,740000,CLP,Pagado
+F-0132,C008,Comercializadora Andes,Norte,Alimentos,2023-12-12,2024-01-18,118000,118000,CLP,Pagado
+F-0133,C017,Importadora Valpo,Centro,Electronica,2023-12-15,,920000,,CLP,Pendiente
+F-0134,C019,Comercial Magallanes,Sur,Textil,2023-12-18,2024-01-28,235000,235000,CLP,Pagado
+F-0135,C006,Proveedores del Valle,Norte,Electronica,2023-12-20,2024-02-10,610000,610000,CLP,Pagado
+F-0136,C018,Grupo Retail Sur,Sur,Alimentos,2023-12-22,2024-01-30,135000,135000,CLP,Pagado
+F-0137,C010,FastFood Supply Co.,Centro,Textil,2023-12-25,2024-02-01,278000,278000,CLP,Pagado
+F-0138,C012,Norte Distribuciones,Norte,Alimentos,2023-12-28,2024-02-05,88000,88000,CLP,Pagado
+F-0139,C014,Distribuidora Bío-Bío,Sur,Textil,2023-12-30,2024-02-15,312000,312000,CLP,Pagado
+F-0140,C002,Comercial Sur Ltda.,Sur,Electronica,2023-12-31,,480000,,CLP,Pendiente
+,C021,,Norte,Electronica,2023-05-10,2023-06-15,300000,300000,CLP,Pagado
+F-0142,C022,Distribuidora Fantasma,Sur,,2023-07-20,2023-08-25,150000,150000,CLP,Pagado
+F-0143,,TechCorp Invalida,Centro,Electronica,2023-08-05,,250000,,CLP,Pendiente
+F-0144,C001,Distribuidora Norte S.A.,Norte,Electronica,2023-13-05,2023-07-10,180000,180000,CLP,Pagado
+F-0145,C003,Importadora Central,Centro,Alimentos,-99,2023-05-20,95000,95000,CLP,Pagado
+F-0146,C005,MegaStore Chile,Sur,Electronica,2023-03-10,2023-01-05,550000,550000,CLP,Pagado
+F-0147,C007,Distribuidora Pacífico,Sur,Alimentos,2023-04-15,2023-05-20,-75000,-75000,CLP,Pagado
+F-0148,C009,Grupo Empresarial Sur,Sur,Electronica,2023-06-20,2023-07-25,999999999,999999999,CLP,Pagado
+F-0149,C002,Comercial Sur Ltda.,Sur,Alimentos,2023-09-10,2023-10-15,85000,85000,CLP,Pagado
+F-0149,C004,Retail Express S.A.,Centro,Textil,2023-09-10,2023-10-15,85000,85000,CLP,Pagado
