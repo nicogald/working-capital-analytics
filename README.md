@@ -63,26 +63,21 @@ Cada dataset contenía errores que fueron identificados y resueltos:
 
 ## Hallazgos principales
 
-**DSO — 73 días**
+**DSO GLOBAL — 73 días**
 La empresa tarda en promedio 73 días en cobrar a sus clientes. 
-El mes con mayor DSO fue agosto y diciembre, y la región con 
-mayor DSO fue [región con mayor DSO]. Esto indica oportunidades 
-de mejora en la gestión de cobranza.
+El mes con mayor DSO fue agosto y diciembre, y la zona del pais con 
+mayor DSO fue zona sur. Esto indica oportunidades 
+de mejora en la gestión de cobranza en esa zona en especifico.
 
-**DIO — 6 días**
+**DIO GLOBAL — 6 días**
 El inventario rota cada 6 días en promedio. Este valor está 
-influenciado por quiebres de stock recurrentes en varios productos 
-que reducen artificialmente el inventario promedio. En un escenario 
-real esto indicaría un problema de abastecimiento más que una 
+influenciado por quiebres de stock recurrentes en varios productos que se pueden evidenciar al ver las tablas en donde varios productos tienen inventario_final igual a cero,
+esto reduce artificialmente el inventario promedio. Esto podría indicar 
+ un problema de abastecimiento más que una 
 rotación eficiente.
 
-**DPO — 18 días**
-La empresa paga a sus proveedores en promedio en 18 días. Este valor 
-está fuertemente influenciado por PR006, proveedor con el mayor volumen 
-de compras del año ($1.064.199.999) y con casi todo su saldo pagado. 
-Excluyendo PR006, el DPO sube significativamente, revelando que con el 
-resto de proveedores la empresa paga muy rápido perdiendo liquidez 
-innecesariamente.
+**DPO GLOBAL — 18 días**
+La empresa paga a sus proveedores en promedio en 18 días. Este valor está fuertemente influenciado por PR006, proveedor con el mayor volumen de compras del año y con gran parte de sus pagos ya realizados. Al excluir PR006, el DPO aumenta significativamente, revelando que con el resto de proveedores la empresa demora más en efectuar los pagos.
 
 **CCC — 61 días**
 La empresa tiene 61 días de capital propio comprometido en el ciclo 
@@ -98,8 +93,7 @@ propios o crédito bancario.
    en la región con mayor DSO y establecer alertas automáticas para facturas 
    vencidas.
 
-2. **Mejorar DIO** — revisar la política de reorden para eliminar quiebres 
-   de stock recurrentes, especialmente en categoría Electrónica.
+2. **Mejorar DIO** — revisar política de inventario y niveles de reorden para optimizar rotación y reducir exceso de inventario, especialmente en Electrónica.
 
 3. **Aumentar DPO** — negociar plazos de pago más largos con proveedores 
    clave, especialmente con aquellos que actualmente se pagan en menos de 
