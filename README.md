@@ -117,3 +117,22 @@ propios o crédito bancario.
 
 ---
 ## Estructura del repositorio
+```text
+├── datos_crudos/                  # Datasets originales (con errores)
+│   ├── ventas_cuentas_cobrar.csv
+│   ├── inventario.csv
+│   └── cuentas_pagar.csv
+├── datos_limpios/                 # Datasets procesados (inputs para Power BI)
+│   ├── ventas_limpio.csv
+│   ├── inventario_limpio.csv
+│   ├── compras_limpio.csv
+│   ├── dpo_por_proveedor.csv
+│   ├── dso_regional.csv
+│   ├── dso_mensual.csv
+│   ├── dio_por_categoria.csv
+│   └── kpis_claves.csv
+├── scripts/                       # Código fuente
+│   └── ETL_capital_trabajo.ipynb  # Notebook con la limpieza en Pandas
+├── dashboard/                     # Archivo de visualización
+│   └── dashboard_kpis.pbix        # Modelo relacional y visualizaciones
+└── README.md                      # Presentación y hallazgos del proyecto
