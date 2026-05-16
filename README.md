@@ -107,5 +107,13 @@ propios o crédito bancario.
 - **Power BI** — dashboard ejecutivo de 3 páginas
 
 ---
+## Dashboard
+<img width="941" height="540" alt="Dashboard kpis DistribuChile" src="https://github.com/user-attachments/assets/968f4a29-b893-4327-bfdf-9bb8c687276e" />
 
+<img width="955" height="535" alt="kpis analisis x proveedores" src="https://github.com/user-attachments/assets/03b90950-2f38-4d83-aa72-edb298c6067e" />
+
+<img width="952" height="535" alt="Analisis inventario y cobro proyecto kpis" src="https://github.com/user-attachments/assets/e871a688-49b7-46cd-9d70-12c8b5629663" />
+
+
+---
 ## Estructura del repositorio
