@@ -1,0 +1,121 @@
+fecha,producto_id,producto_nombre,categoria,unidades_vendidas,precio_venta_unitario,monto_venta
+2023-01-01,P001,Laptop ProBook,Electronica,30,8000,240000
+2023-01-01,P002,Monitor 24 pulgadas,Electronica,20,8000,160000
+2023-01-01,P003,Teclado Inalambrico,Electronica,35,8000,280000
+2023-01-01,P004,Mouse Optico,Electronica,45,8000,360000
+2023-01-01,P005,Arroz Grano Largo,Alimentos,60,2214,132857
+2023-01-01,P006,Aceite Vegetal 1L,Alimentos,38,2214,84143
+2023-01-01,P007,Harina Sin Polvos,Alimentos,42,2214,93000
+2023-01-01,P008,Polera Algodon M,Textil,30,4938,148125
+2023-01-01,P009,Pantalon Jean 32,Textil,25,4938,123438
+2023-01-01,P010,Zapatilla Running,Textil,25,4938,123438
+2023-02-01,P001,Laptop ProBook,Electronica,28,13860,388088
+2023-02-01,P002,Monitor 24 pulgadas,Electronica,22,13860,304926
+2023-02-01,P003,Teclado Inalambrico,Electronica,38,13860,526691
+2023-02-01,P004,Mouse Optico,Electronica,48,13860,665294
+2023-02-01,P005,Arroz Grano Largo,Alimentos,62,2114,131074
+2023-02-01,P006,Aceite Vegetal 1L,Alimentos,42,2114,88792
+2023-02-01,P007,Harina Sin Polvos,Alimentos,45,2114,95134
+2023-02-01,P008,Polera Algodon M,Textil,32,2129,68141
+2023-02-01,P009,Pantalon Jean 32,Textil,27,2129,57494
+2023-02-01,P010,Zapatilla Running,Textil,26,2129,55365
+2023-03-01,P001,Laptop ProBook,Electronica,25,18120,452991
+2023-03-01,P002,Monitor 24 pulgadas,Electronica,18,18120,326154
+2023-03-01,P003,Teclado Inalambrico,Electronica,32,18120,579829
+2023-03-01,P004,Mouse Optico,Electronica,42,18120,761026
+2023-03-01,P005,Arroz Grano Largo,Alimentos,58,3029,175706
+2023-03-01,P006,Aceite Vegetal 1L,Alimentos,38,3029,115118
+2023-03-01,P007,Harina Sin Polvos,Alimentos,40,3029,121176
+2023-03-01,P008,Polera Algodon M,Textil,28,5816,162842
+2023-03-01,P009,Pantalon Jean 32,Textil,24,5816,139579
+2023-03-01,P010,Zapatilla Running,Textil,24,5816,139579
+2023-04-01,P001,Laptop ProBook,Electronica,24,25273,606545
+2023-04-01,P002,Monitor 24 pulgadas,Electronica,16,25273,404364
+2023-04-01,P003,Teclado Inalambrico,Electronica,30,25273,758182
+2023-04-01,P004,Mouse Optico,Electronica,40,25273,1010909
+2023-04-01,P005,Arroz Grano Largo,Alimentos,55,2891,159031
+2023-04-01,P006,Aceite Vegetal 1L,Alimentos,36,2891,104093
+2023-04-01,P007,Harina Sin Polvos,Alimentos,38,2891,109876
+2023-04-01,P008,Polera Algodon M,Textil,26,6986,181639
+2023-04-01,P009,Pantalon Jean 32,Textil,23,6986,160681
+2023-04-01,P010,Zapatilla Running,Textil,23,6986,160681
+2023-05-01,P001,Laptop ProBook,Electronica,22,22830,502264
+2023-05-01,P002,Monitor 24 pulgadas,Electronica,15,22830,342453
+2023-05-01,P003,Teclado Inalambrico,Electronica,30,22830,684906
+2023-05-01,P004,Mouse Optico,Electronica,39,22830,890377
+2023-05-01,P005,Arroz Grano Largo,Alimentos,55,2532,139246
+2023-05-01,P006,Aceite Vegetal 1L,Alimentos,35,2532,88611
+2023-05-01,P007,Harina Sin Polvos,Alimentos,36,2532,91143
+2023-05-01,P008,Polera Algodon M,Textil,25,9104,227612
+2023-05-01,P009,Pantalon Jean 32,Textil,21,9104,191194
+2023-05-01,P010,Zapatilla Running,Textil,21,9104,191194
+2023-06-01,P001,Laptop ProBook,Electronica,10,35305,353049
+2023-06-01,P002,Monitor 24 pulgadas,Electronica,8,35305,282439
+2023-06-01,P003,Teclado Inalambrico,Electronica,28,35305,988537
+2023-06-01,P004,Mouse Optico,Electronica,36,35305,1270976
+2023-06-01,P005,Arroz Grano Largo,Alimentos,52,2917,151667
+2023-06-01,P006,Aceite Vegetal 1L,Alimentos,33,2917,96250
+2023-06-01,P007,Harina Sin Polvos,Alimentos,35,2917,102083
+2023-06-01,P008,Polera Algodon M,Textil,27,7915,213718
+2023-06-01,P009,Pantalon Jean 32,Textil,22,7916,174141
+2023-06-01,P010,Zapatilla Running,Textil,22,7916,174141
+2023-07-01,P001,Laptop ProBook,Electronica,26,21897,569310
+2023-07-01,P002,Monitor 24 pulgadas,Electronica,22,21897,481724
+2023-07-01,P003,Teclado Inalambrico,Electronica,30,21897,656897
+2023-07-01,P004,Mouse Optico,Electronica,38,21897,832069
+2023-07-01,P005,Arroz Grano Largo,Alimentos,53,3492,185058
+2023-07-01,P006,Aceite Vegetal 1L,Alimentos,32,3492,111733
+2023-07-01,P007,Harina Sin Polvos,Alimentos,35,3492,122208
+2023-07-01,P008,Polera Algodon M,Textil,27,7878,212716
+2023-07-01,P009,Pantalon Jean 32,Textil,23,7878,181203
+2023-07-01,P010,Zapatilla Running,Textil,24,7878,189081
+2023-08-01,P001,Laptop ProBook,Electronica,22,19899,437778
+2023-08-01,P002,Monitor 24 pulgadas,Electronica,19,19899,378081
+2023-08-01,P003,Teclado Inalambrico,Electronica,20,19899,397980
+2023-08-01,P004,Mouse Optico,Electronica,38,19899,756162
+2023-08-01,P005,Arroz Grano Largo,Alimentos,52,4339,225627
+2023-08-01,P006,Aceite Vegetal 1L,Alimentos,32,4339,138847
+2023-08-01,P007,Harina Sin Polvos,Alimentos,34,4339,147525
+2023-08-01,P008,Polera Algodon M,Textil,28,11026,308737
+2023-08-01,P009,Pantalon Jean 32,Textil,24,11026,264632
+2023-08-01,P010,Zapatilla Running,Textil,24,11026,264632
+2023-09-01,P001,Laptop ProBook,Electronica,8,38831,310649
+2023-09-01,P002,Monitor 24 pulgadas,Electronica,8,38831,310649
+2023-09-01,P003,Teclado Inalambrico,Electronica,25,38831,970779
+2023-09-01,P004,Mouse Optico,Electronica,36,38831,1397922
+2023-09-01,P005,Arroz Grano Largo,Alimentos,50,3246,162281
+2023-09-01,P006,Aceite Vegetal 1L,Alimentos,30,3246,97368
+2023-09-01,P007,Harina Sin Polvos,Alimentos,34,3246,110351
+2023-09-01,P008,Polera Algodon M,Textil,26,7740,201233
+2023-09-01,P009,Pantalon Jean 32,Textil,24,7740,185753
+2023-09-01,P010,Zapatilla Running,Textil,23,7740,178014
+2023-10-01,P001,Laptop ProBook,Electronica,25,23478,586957
+2023-10-01,P002,Monitor 24 pulgadas,Electronica,22,23478,516522
+2023-10-01,P003,Teclado Inalambrico,Electronica,30,23478,704348
+2023-10-01,P004,Mouse Optico,Electronica,38,23478,892174
+2023-10-01,P005,Arroz Grano Largo,Alimentos,52,3866,201008
+2023-10-01,P006,Aceite Vegetal 1L,Alimentos,32,3866,123697
+2023-10-01,P007,Harina Sin Polvos,Alimentos,35,3866,135294
+2023-10-01,P008,Polera Algodon M,Textil,28,13122,367405
+2023-10-01,P009,Pantalon Jean 32,Textil,23,13122,301797
+2023-10-01,P010,Zapatilla Running,Textil,23,13122,301797
+2023-11-01,P001,Laptop ProBook,Electronica,20,27300,546000
+2023-11-01,P002,Monitor 24 pulgadas,Electronica,19,27300,518700
+2023-11-01,P003,Teclado Inalambrico,Electronica,27,27300,737100
+2023-11-01,P004,Mouse Optico,Electronica,34,27300,928200
+2023-11-01,P005,Arroz Grano Largo,Alimentos,48,3239,155469
+2023-11-01,P006,Aceite Vegetal 1L,Alimentos,30,3239,97168
+2023-11-01,P007,Harina Sin Polvos,Alimentos,35,3239,113363
+2023-11-01,P008,Polera Algodon M,Textil,29,14740,427468
+2023-11-01,P009,Pantalon Jean 32,Textil,24,14740,353766
+2023-11-01,P010,Zapatilla Running,Textil,24,14740,353766
+2023-12-01,P001,Laptop ProBook,Electronica,5,56122,280612
+2023-12-01,P002,Monitor 24 pulgadas,Electronica,8,56122,448980
+2023-12-01,P003,Teclado Inalambrico,Electronica,24,56122,1346939
+2023-12-01,P004,Mouse Optico,Electronica,12,56122,673469
+2023-12-01,P005,Arroz Grano Largo,Alimentos,48,4780,229424
+2023-12-01,P006,Aceite Vegetal 1L,Alimentos,28,4780,133831
+2023-12-01,P007,Harina Sin Polvos,Alimentos,42,4780,200746
+2023-12-01,P008,Polera Algodon M,Textil,45,10769,484615
+2023-12-01,P009,Pantalon Jean 32,Textil,45,10769,484615
+2023-12-01,P010,Zapatilla Running,Textil,40,10769,430769
