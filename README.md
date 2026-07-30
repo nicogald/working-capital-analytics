@@ -122,7 +122,7 @@ que el problema se repita en 2024.
 
 ### Metodología
 - **Tratamiento de quiebres de stock**: los meses con inventario final en 0 (junio, septiembre 
-  y diciembre) fueron imputados usando el promedio de los meses adyacentes sin quiebre, para 
+  y diciembre) fueron calculados usando el promedio de los meses adyacentes sin quiebre, para 
   reconstruir una serie de demanda representativa en lugar de usar las ventas subregistradas.
 - **Selección de modelo**: dado que el dataset cubre solo 12 meses (un ciclo anual), no hay 
   datos suficientes para Holt-Winters o SARIMA, que requieren al menos 2-3 ciclos completos. 
@@ -168,7 +168,7 @@ inmediata, los quiebres de stock continuarían en el primer trimestre de 2024.
 
 ---
 
-## Conclusión integrada
+## Conclusión 
 
 El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino quiebres de stock recurrentes en los productos de mayor valor de la categoría Electrónica. La segmentación ABC-XYZ confirma que estos productos (AY) son críticos para el negocio y requieren una política de inventario más robusta. El forecast de demanda cuantifica el problema: sin intervención, P001, P002 y P004 mantendrían inventario en 0 durante todo el primer trimestre de 2024. La recomendación de pedido (65, 60 y 104 unidades respectivamente) le da al equipo de compras un número concreto para negociar con proveedores, en lugar de reabastecer de forma reactiva como ha ocurrido hasta ahora. Cubrir esta demanda elevaría el DIO a un valor más real, reduciría las ventas perdidas por falta de stock y en consecuencia mejoraría el DSO y el CCC.
 
@@ -233,8 +233,6 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 │   └── tabla_combinada_inventario_final_pronostico.csv
 ├── notebooks/
 │   ├── 01_notebook_analisis_capital.ipynb
-│   ├── 02_segmentacion_abc_xyz.ipynb
-│   └── 03_forecasting_demanda.ipynb
 ├── dashboard/
 │   └── Proyecto_kpis.pbix
 └── README.md
