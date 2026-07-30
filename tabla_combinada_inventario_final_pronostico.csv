@@ -1,0 +1,4 @@
+producto_id,producto_nombre,inventario_final,Demanda_pronosticada,Cantidad_pedido
+P001,Laptop ProBook,0,65,65
+P002,"Monitor 24""",0,60,60
+P004,Mouse Optico,0,104,104
