@@ -3,15 +3,17 @@
 ## Contexto
 DistribuChile S.A. es una empresa distribuidora con operaciones en todo el territorio nacional 
 (Norte, Centro, Sur), con 3 categorías de producto (Electrónica, Alimentos, Textil). 
-Este proyecto analiza el ciclo de capital de trabajo y la segmentación de inventario 
-durante el año 2023, combinando KPIs financieros con análisis operativo de productos.
+Este proyecto analiza el ciclo de capital de trabajo, la segmentación de inventario y el 
+pronóstico de demanda durante el año 2023-2024, combinando KPIs financieros, análisis 
+operativo de productos y modelos de forecasting.
 
 ---
 
 ## Problema
-El CFO de DistribuChile S.A. necesitaba entender dos cosas:
+El CFO de DistribuChile S.A. necesitaba entender tres cosas:
 1. El estado del capital de trabajo para identificar dónde se estaba perdiendo liquidez
 2. Qué productos merecen mayor atención en la gestión de inventario y por qué
+3. Cuánto reabastecer de los productos más críticos para evitar quiebres de stock en 2024
 
 ---
 
@@ -111,9 +113,64 @@ Los productos **CX** (P006 y P007) de bajo valor y demanda estable pueden gestio
 
 ---
 
+## ANÁLISIS 3 — Forecasting de Demanda
+
+### Contexto
+Los productos AY (P001, P002 y P004) presentaron quiebres de stock recurrentes durante 2023. 
+Se aplicaron modelos de pronóstico de demanda para anticipar su reabastecimiento y evitar 
+que el problema se repita en 2024.
+
+### Metodología
+- **Tratamiento de quiebres de stock**: los meses con inventario final en 0 (junio, septiembre 
+  y diciembre) fueron imputados usando el promedio de los meses adyacentes sin quiebre, para 
+  reconstruir una serie de demanda representativa en lugar de usar las ventas subregistradas.
+- **Selección de modelo**: dado que el dataset cubre solo 12 meses (un ciclo anual), no hay 
+  datos suficientes para Holt-Winters o SARIMA, que requieren al menos 2-3 ciclos completos. 
+  Se seleccionó el método según las características de cada serie:
+  - **P001** → Holt (tendencia descendente clara)
+  - **P002** → SES (sin tendencia ni estacionalidad clara)
+  - **P004** → Holt (tendencia descendente clara)
+- **Validación**: cada modelo se entrenó con 9 meses (enero-septiembre) y se evaluó contra 
+  los 3 meses restantes (octubre-diciembre) antes de reentrenar con los 12 meses completos 
+  para el pronóstico final.
+
+### Métricas de validación
+
+| Producto | Modelo | MAPE | MAE | RMSE | Bias |
+|---|---|---|---|---|---|
+| P001 | Holt | 8.4% | 1.83 | 2.10 | 0.17 |
+| P002 | SES | 5.6% | 1.17 | 1.32 | -0.50 |
+| P004 | Holt | 4.6% | 1.67 | 1.73 | -1.00 |
+
+Los tres modelos presentan MAPE inferior al 10%, considerado excelente en supply chain. 
+El bias negativo en P002 y P004 indica una leve tendencia a subestimar la demanda, lo que 
+se compensó agregando margen en la recomendación de pedido.
+
+### Forecast enero-marzo 2024
+
+| Período | P001 | P002 | P004 |
+|---|---|---|---|
+| Enero 2024 | 22 | 20 | 35 |
+| Febrero 2024 | 22 | 20 | 35 |
+| Marzo 2024 | 21 | 20 | 34 |
+
+### Recomendación de reabastecimiento
+
+| Producto | Stock actual (dic 2023) | Demanda pronosticada (Q1 2024) | Unidades a pedir |
+|---|---|---|---|
+| P001 Laptop ProBook | 0 | 65 | **65** |
+| P002 Monitor 24" | 0 | 60 | **60** |
+| P004 Mouse Optico | 0 | 104 | **104** |
+
+Los tres productos AY terminaron 2023 con inventario en 0, confirmando el problema de 
+abastecimiento identificado en el análisis de working capital. Sin una acción correctiva 
+inmediata, los quiebres de stock continuarían en el primer trimestre de 2024.
+
+---
+
 ## Conclusión integrada
 
-El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino quiebres de stock recurrentes en los productos de mayor valor de la categoría Electrónica. La segmentación ABC-XYZ confirma que estos productos (AY) son críticos para el negocio y requieren una política de inventario más robusta. Mejorar el abastecimiento de los productos AY elevaría el DIO a un valor más real pero también reduciría las ventas perdidas por falta de stock, mejorando el DSO y en consecuencia el CCC.
+El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino quiebres de stock recurrentes en los productos de mayor valor de la categoría Electrónica. La segmentación ABC-XYZ confirma que estos productos (AY) son críticos para el negocio y requieren una política de inventario más robusta. El forecast de demanda cuantifica el problema: sin intervención, P001, P002 y P004 mantendrían inventario en 0 durante todo el primer trimestre de 2024. La recomendación de pedido (65, 60 y 104 unidades respectivamente) le da al equipo de compras un número concreto para negociar con proveedores, en lugar de reabastecer de forma reactiva como ha ocurrido hasta ahora. Cubrir esta demanda elevaría el DIO a un valor más real, reduciría las ventas perdidas por falta de stock y en consecuencia mejoraría el DSO y el CCC.
 
 ---
 
@@ -121,18 +178,20 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 
 1. **Reducir DSO** — implementar descuentos por pronto pago para clientes en la zona Sur y alertas automáticas para facturas vencidas.
 
-2. **Corregir política de reabastecimiento en productos AY** — establecer stock de seguridad y puntos de reorden específicos para P001, P002 y P004 para eliminar los quiebres de stock recurrentes en la segunda mitad del año.
+2. **Ejecutar el pedido de reabastecimiento** — solicitar 65 unidades de P001, 60 de P002 y 104 de P004 antes de enero 2024 para cubrir la demanda proyectada del Q1 y eliminar los quiebres de stock recurrentes.
 
 3. **Aumentar DPO** — negociar plazos de pago más largos con proveedores clave, especialmente con aquellos que actualmente se pagan en menos de 30 días, para liberar capital de trabajo.
 
 4. **Automatizar gestión de productos CX** — P006 y P007 pueden gestionarse con reorden automático, liberando tiempo del equipo para enfocarse en los productos AY.
 
+5. **Ampliar el horizonte de datos** — con más de 12 meses de historia se podrían aplicar Holt-Winters o SARIMA para capturar estacionalidad y mejorar la precisión del forecast.
+
 ---
 
 ## Herramientas utilizadas
-- **Python** — pandas (limpieza de datos y cálculo de KPIs)
+- **Python** — pandas, matplotlib, statsmodels (limpieza de datos, cálculo de KPIs y forecasting)
 - **Google Colab** — entorno de desarrollo
-- **Power BI** — dashboard ejecutivo de 4 páginas
+- **Power BI** — dashboard ejecutivo de 5 páginas
 
 ---
 
@@ -143,7 +202,9 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 <br><br>
 <img width="952" height="535" alt="Analisis inventario y cobro proyecto kpis" src="https://github.com/user-attachments/assets/e871a688-49b7-46cd-9d70-12c8b5629663" />
 <br><br>
-<img width="1863" height="1054" alt="Captura de pantalla 2026-05-25 220735" src="https://github.com/user-attachments/assets/f2f16bf0-09fa-47f6-8388-48e299d0cff8" />
+<img width="1863" height="1054" alt="Segmentacion ABC-XYZ" src="https://github.com/user-attachments/assets/f2f16bf0-09fa-47f6-8388-48e299d0cff8" />
+<br><br>
+<img width="1411" height="764" alt="image" src="https://github.com/user-attachments/assets/9c3e7e97-63f0-4efe-9581-fc86e73b3205" />
 
 ---
 
@@ -152,13 +213,12 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 ├── datos_crudos/
 │   ├── ventas_cuentas_cobrar.csv
 │   ├── inventario.csv
-│   └── cuentas_pagar.csv
-│   └── ventas_por_producto(2).csv
+│   ├── cuentas_pagar.csv
+│   └── ventas_por_producto.csv
 ├── datos_limpios/
 │   ├── ventas_limpio.csv
 │   ├── inventario_limpio.csv
 │   ├── compras_limpio.csv
-│   ├── ventas_por_producto.csv
 │   ├── dpo_por_proveedor.csv
 │   ├── dso_regional.csv
 │   ├── dso_mensual.csv
@@ -167,10 +227,14 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 │   ├── tabla_abc.csv
 │   ├── tabla_xyz.csv
 │   ├── tabla_combinada.csv
-│   └── tabla_comibnada_valores.csv
+│   ├── tabla_combinada_valores.csv
+│   ├── resumen_metricas_prediccion.csv
+│   ├── resumen_prediccion_proyecto.csv
+│   └── tabla_combinada_inventario_final_pronostico.csv
 ├── notebooks/
- ├── 01_Notebook_analisis_capital.ipynb
-│   
+│   ├── 01_notebook_analisis_capital.ipynb
+│   ├── 02_segmentacion_abc_xyz.ipynb
+│   └── 03_forecasting_demanda.ipynb
 ├── dashboard/
 │   └── Proyecto_kpis.pbix
 └── README.md
