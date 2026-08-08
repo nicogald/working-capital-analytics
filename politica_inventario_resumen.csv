@@ -1,0 +1,4 @@
+producto_id,producto_nombre,N_optimo_replicas,Q_optimo,r_optimo,costo_esperado_anual,nivel_servicio_pct
+P001,Laptop ProBook,59,47,42,7774628,83.2
+P002,"Monitor 24""",54,44,37,3085243,83.2
+P004,Mouse Optico,30,106,48,707445,83.1
