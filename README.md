@@ -302,7 +302,7 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 │   └── combinaciones_todos_productos.csv
 ├── notebooks/
 │   ├── 01_notebook_analisis_capital.ipynb
-│   └── 02_simulacion_montecarlo_inventario.py
+│   └── 02_Politica_(Q,r)_para_productos_prioritarios_con_montecarlo.ipynb
 ├── dashboard/
 │   └── Proyecto_kpis.pbix
 └── README.md
