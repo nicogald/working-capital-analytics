@@ -3,17 +3,20 @@
 ## Contexto
 DistribuChile S.A. es una empresa distribuidora con operaciones en todo el territorio nacional 
 (Norte, Centro, Sur), con 3 categorías de producto (Electrónica, Alimentos, Textil). 
-Este proyecto analiza el ciclo de capital de trabajo, la segmentación de inventario y el 
-pronóstico de demanda durante el año 2023-2024, combinando KPIs financieros, análisis 
-operativo de productos y modelos de forecasting.
+Este proyecto analiza el ciclo de capital de trabajo, la segmentación de inventario, el 
+pronóstico de demanda y la política de reabastecimiento durante el año 2023-2024, combinando 
+KPIs financieros, análisis operativo de productos, modelos de forecasting y simulación 
+Monte Carlo.
 
 ---
 
 ## Problema
-El CFO de DistribuChile S.A. necesitaba entender tres cosas:
+El CFO de DistribuChile S.A. necesitaba entender cuatro cosas:
 1. El estado del capital de trabajo para identificar dónde se estaba perdiendo liquidez
 2. Qué productos merecen mayor atención en la gestión de inventario y por qué
 3. Cuánto reabastecer de los productos más críticos para evitar quiebres de stock en 2024
+4. Con qué cantidad de pedido (Q) y punto de reorden (r) sostener el inventario en el tiempo, 
+   minimizando el costo total considerando la incertidumbre real de la demanda
 
 ---
 
@@ -168,9 +171,68 @@ inmediata, los quiebres de stock continuarían en el primer trimestre de 2024.
 
 ---
 
+## ANÁLISIS 4 — Política de Inventario (Q,r) con Simulación Monte Carlo
+
+### Contexto
+Con el forecast de demanda del Análisis 3 y su margen de error (RMSE), se calculó la política 
+de inventario óptima (cantidad a pedir Q y punto de reorden r) para los productos AY, 
+considerando el costo de quiebre de stock que las fórmulas clásicas de EOQ/ROP no contemplan.
+
+### Metodología
+- **Granularidad mensual**: dado que el forecast y RMSE del Análisis 3 están en base mensual, 
+  la simulación avanza mes a mes (no día a día) para mantener consistencia de unidades.
+- **Distribución de demanda**: se modeló como Normal, usando el forecast como media y el RMSE 
+  como desviación estándar (válido dado que el Bias de los 3 modelos es cercano a cero). 
+  Limitación reconocida: con solo 12 observaciones históricas no fue posible validar 
+  estadísticamente este supuesto.
+- **Búsqueda grueso → fino**: los rangos de Q y r se derivaron de las fórmulas clásicas de 
+  EOQ y ROP (no arbitrariamente), usándolas como centro de un rango amplio (fase gruesa) y 
+  luego refinando alrededor del mejor resultado (fase fina).
+- **Common Random Numbers (CRN)**: todas las combinaciones de (Q,r) se evaluaron bajo la 
+  misma secuencia de demanda simulada, para comparar limpio sin que el azar favorezca a una 
+  política sobre otra.
+- **N óptimo de réplicas**: se calibró el número de réplicas necesario mediante una corrida 
+  piloto (200 réplicas) y la fórmula N = (Z·σ/E)², usando un margen de error del 1% sobre el 
+  costo esperado. Esto evitó usar un número arbitrario de réplicas y redujo el costo 
+  computacional sin perder precisión.
+
+### Supuestos operativos
+| Parámetro | Valor | Fuente |
+|---|---|---|
+| Lead time | 15 días (0.5 meses) | Supuesto documentado |
+| Tasa de costo de capital/almacenaje | 20% anual | Supuesto documentado |
+| Costo de ordenar | $50.000 CLP | Supuesto documentado |
+| Costo de quiebre | 30% del costo unitario | Supuesto documentado |
+
+### Resultados — Política óptima por producto
+
+| Producto | N réplicas | Q óptimo | r óptimo | Costo esperado anual | Nivel de servicio |
+|---|---|---|---|---|---|
+| P001 Laptop ProBook | 59 | 47 | 42 | $7.774.628 | 83.2% |
+| P002 Monitor 24" | 54 | 44 | 37 | $3.085.243 | 83.2% |
+| P004 Mouse Optico | 30 | 106 | 48 | $707.445 | 83.1% |
+
+### Hallazgo principal
+Ninguna combinación de (Q,r) evaluada alcanzó el 95% de nivel de servicio objetivo, partiendo 
+del inventario real en 0 al cierre de 2023. Esto confirma matemáticamente que la política de 
+mantenimiento (Q,r) por sí sola no puede resolver un déficit de stock preexistente: se 
+requiere primero el pedido de reabastecimiento inicial (65, 60 y 104 unidades, calculado en 
+el Análisis 3) para sacar el sistema de déficit, y recién después esta política sostiene el 
+inventario establemente en torno al 83% de servicio con el costo mínimo posible.
+
+### Trabajo futuro
+Con más historia de ventas se podría: (1) validar estadísticamente la distribución de demanda 
+con un test de bondad de ajuste, (2) contrastar el supuesto Normal contra un bootstrap de 
+residuos históricos, (3) obtener lead times y costos reales de la empresa en vez de los 
+supuestos documentados aquí, y (4) extender la política de inventario al resto del 
+portafolio: ROP clásico (revisión continua) para productos AX, y política de revisión 
+periódica (R,S) para productos BX, BY y CX.
+
+---
+
 ## Conclusión 
 
-El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino quiebres de stock recurrentes en los productos de mayor valor de la categoría Electrónica. La segmentación ABC-XYZ confirma que estos productos (AY) son críticos para el negocio y requieren una política de inventario más robusta. El forecast de demanda cuantifica el problema: sin intervención, P001, P002 y P004 mantendrían inventario en 0 durante todo el primer trimestre de 2024. La recomendación de pedido (65, 60 y 104 unidades respectivamente) le da al equipo de compras un número concreto para negociar con proveedores, en lugar de reabastecer de forma reactiva como ha ocurrido hasta ahora. Cubrir esta demanda elevaría el DIO a un valor más real, reduciría las ventas perdidas por falta de stock y en consecuencia mejoraría el DSO y el CCC.
+El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino quiebres de stock recurrentes en los productos de mayor valor de la categoría Electrónica. La segmentación ABC-XYZ confirma que estos productos (AY) son críticos para el negocio y requieren una política de inventario más robusta. El forecast de demanda cuantifica el problema: sin intervención, P001, P002 y P004 mantendrían inventario en 0 durante todo el primer trimestre de 2024. La simulación Monte Carlo va un paso más allá: confirma que ni siquiera una política de reorden bien calibrada puede sostener el servicio sin antes resolver el déficit inicial, y entrega la cantidad exacta (Q) y el punto de reorden (r) que minimizan el costo total una vez cubierto ese déficit. En conjunto, estos cuatro análisis le dan al equipo de compras un plan concreto: cuánto pedir ahora (65, 60 y 104 unidades), y cómo gestionar el inventario de ahí en adelante (Q y r óptimos por producto) para mantener el costo mínimo posible dado el nivel de servicio alcanzable.
 
 ---
 
@@ -178,20 +240,22 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 
 1. **Reducir DSO** — implementar descuentos por pronto pago para clientes en la zona Sur y alertas automáticas para facturas vencidas.
 
-2. **Ejecutar el pedido de reabastecimiento** — solicitar 65 unidades de P001, 60 de P002 y 104 de P004 antes de enero 2024 para cubrir la demanda proyectada del Q1 y eliminar los quiebres de stock recurrentes.
+2. **Ejecutar el pedido de reabastecimiento inicial** — solicitar 65 unidades de P001, 60 de P002 y 104 de P004 antes de enero 2024 para cubrir la demanda proyectada del Q1 y sacar el sistema del déficit de stock.
 
-3. **Aumentar DPO** — negociar plazos de pago más largos con proveedores clave, especialmente con aquellos que actualmente se pagan en menos de 30 días, para liberar capital de trabajo.
+3. **Adoptar la política (Q,r) calibrada** — una vez cubierto el déficit inicial, ordenar en lotes de 47 (P001), 44 (P002) y 106 (P004) unidades cada vez que el inventario llegue a 42, 37 y 48 unidades respectivamente.
 
-4. **Automatizar gestión de productos CX** — P006 y P007 pueden gestionarse con reorden automático, liberando tiempo del equipo para enfocarse en los productos AY.
+4. **Aumentar DPO** — negociar plazos de pago más largos con proveedores clave, especialmente con aquellos que actualmente se pagan en menos de 30 días, para liberar capital de trabajo.
 
-5. **Ampliar el horizonte de datos** — con más de 12 meses de historia se podrían aplicar Holt-Winters o SARIMA para capturar estacionalidad y mejorar la precisión del forecast.
+5. **Automatizar gestión de productos CX** — P006 y P007 pueden gestionarse con reorden automático o revisión periódica, liberando tiempo del equipo para enfocarse en los productos AY.
+
+6. **Ampliar el horizonte de datos** — con más de 12 meses de historia se podrían aplicar Holt-Winters o SARIMA para capturar estacionalidad, validar estadísticamente la distribución de demanda, y extender la política de inventario al resto del portafolio.
 
 ---
 
 ## Herramientas utilizadas
-- **Python** — pandas, matplotlib, statsmodels (limpieza de datos, cálculo de KPIs y forecasting)
+- **Python** — pandas, numpy, matplotlib, statsmodels, scipy (limpieza de datos, cálculo de KPIs, forecasting y simulación Monte Carlo)
 - **Google Colab** — entorno de desarrollo
-- **Power BI** — dashboard ejecutivo de 5 páginas
+- **Power BI** — dashboard ejecutivo de 6 páginas
 
 ---
 
@@ -204,7 +268,9 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 <br><br>
 <img width="1863" height="1054" alt="Segmentacion ABC-XYZ" src="https://github.com/user-attachments/assets/f2f16bf0-09fa-47f6-8388-48e299d0cff8" />
 <br><br>
-<img width="1411" height="764" alt="image" src="https://github.com/user-attachments/assets/9c3e7e97-63f0-4efe-9581-fc86e73b3205" />
+<img width="1411" height="764" alt="Forecasting de demanda" src="https://github.com/user-attachments/assets/9c3e7e97-63f0-4efe-9581-fc86e73b3205" />
+<br><br>
+<img width="1357" height="762" alt="Politica de inventario Q,r Monte Carlo" src="PEGA_AQUI_EL_LINK_DE_TU_CAPTURA" />
 
 ---
 
@@ -230,9 +296,12 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 │   ├── tabla_combinada_valores.csv
 │   ├── resumen_metricas_prediccion.csv
 │   ├── resumen_prediccion_proyecto.csv
-│   └── tabla_combinada_inventario_final_pronostico.csv
+│   ├── tabla_combinada_inventario_final_pronostico.csv
+│   ├── politica_inventario_resumen.csv
+│   └── combinaciones_todos_productos.csv
 ├── notebooks/
 │   ├── 01_notebook_analisis_capital.ipynb
+│   └── 02_simulacion_montecarlo_inventario.py
 ├── dashboard/
 │   └── Proyecto_kpis.pbix
 └── README.md
