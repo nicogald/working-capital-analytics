@@ -270,7 +270,7 @@ El DIO artificialmente bajo de 6 días no refleja una rotación eficiente sino q
 <br><br>
 <img width="1411" height="764" alt="Forecasting de demanda" src="https://github.com/user-attachments/assets/9c3e7e97-63f0-4efe-9581-fc86e73b3205" />
 <br><br>
-<img width="1357" height="762" alt="Politica de inventario Q,r Monte Carlo" src="<img width="1387" height="784" alt="image" src="https://github.com/user-attachments/assets/7b0dfed4-c6f1-4586-8b4e-d73d81cfe516" />
+<img width="1387" height="784" alt="Politica de inventario Q,r Monte Carlo" src="https://github.com/user-attachments/assets/7b0dfed4-c6f1-4586-8b4e-d73d81cfe516" />
 " />
 
 ---
